@@ -1,0 +1,65 @@
+2026-09-20 16:46:17,789 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-09-20 16:46:17,790 - openai._base_client - INFO - Retrying request to /chat/completions in 0.417998 seconds
+2026-09-20 16:46:23,364 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-09-20 16:46:23,365 - openai._base_client - INFO - Retrying request to /chat/completions in 0.762452 seconds
+2026-09-20 16:46:29,415 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-09-20 16:46:29,419 - AI_Recruiter - ERROR - Paper fetch error: Relay failed to localhost:11434
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\app.py", line 362, in main
+    source = planner_agent.select_source(analysis_text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\Planner.py", line 22, in select_source
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Relay failed to localhost:11434
+2026-09-20 16:47:14,019 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-09-20 16:47:14,021 - openai._base_client - INFO - Retrying request to /chat/completions in 0.425605 seconds
+2026-09-20 16:47:19,491 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-09-20 16:47:19,491 - openai._base_client - INFO - Retrying request to /chat/completions in 0.827497 seconds
+2026-09-20 16:47:26,073 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-09-20 16:47:26,074 - AI_Recruiter - ERROR - Paper fetch error: Relay failed to localhost:11434
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\app.py", line 362, in main
+    source = planner_agent.select_source(analysis_text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\Planner.py", line 22, in select_source
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1215, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Relay failed to localhost:11434
+2026-09-20 16:47:46,966 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:47:49,384 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:47:57,382 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:47:57,571 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:47:57,774 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:47:57,917 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:47:58,088 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:47:58,228 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:48:22,714 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:48:35,266 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:48:50,174 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:49:08,304 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:49:18,947 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:49:29,408 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:49:54,927 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"

@@ -1,0 +1,8 @@
+2026-09-22 22:31:04,450 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-22 22:31:19,335 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-22 22:36:03,100 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-22 22:36:09,032 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-22 22:37:23,522 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-09-22 22:37:23,524 - openai._base_client - INFO - Retrying request to /chat/completions in 0.404889 seconds
+2026-09-22 22:39:39,420 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-22 22:39:39,421 - agents.translator - INFO - [Translator] Result (len=0): ''

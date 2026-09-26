@@ -1,0 +1,14 @@
+2026-09-19 19:29:01,956 - AI_Recruiter - ERROR - Translation error: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per day. You can wait and try again later oryou can try the translate_batch function
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\app.py", line 502, in main
+    st.session_state["translated_text"] = translator_agent.translate_to_persian(
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\translator.py", line 16, in translate_to_persian
+    translated = self._translate_with_retry(chunk)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\translator.py", line 26, in _translate_with_retry
+    return GoogleTranslator(source="en", target="fa").translate(chunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\deep_translator\google.py", line 71, in translate
+    raise TooManyRequests()
+deep_translator.exceptions.TooManyRequests: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per day. You can wait and try again later oryou can try the translate_batch function

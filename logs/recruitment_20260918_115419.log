@@ -1,0 +1,40 @@
+2026-09-18 11:54:48,594 - agents.User_docs - ERROR - Error analyzing uploads\resume_20260918_115434_icgsee2013.pdf: 'UserDocs' object has no attribute 'client'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 27, in analyze_pdfs
+    analysis = self._analyze_single_pdf(file_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 42, in _analyze_single_pdf
+    analysis_result = self._run_analysis(text)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 58, in _run_analysis
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^
+AttributeError: 'UserDocs' object has no attribute 'client'
+2026-09-18 11:55:12,561 - agents.User_docs - ERROR - Error analyzing uploads\resume_20260918_115434_MCA-AI.pdf: 'UserDocs' object has no attribute 'client'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 27, in analyze_pdfs
+    analysis = self._analyze_single_pdf(file_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 42, in _analyze_single_pdf
+    analysis_result = self._run_analysis(text)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 58, in _run_analysis
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^
+AttributeError: 'UserDocs' object has no attribute 'client'
+2026-09-18 11:55:43,401 - agents.User_docs - ERROR - Error analyzing uploads\resume_20260918_115435_neuralnetworksanddeeplearning.pdf: 'UserDocs' object has no attribute 'client'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 27, in analyze_pdfs
+    analysis = self._analyze_single_pdf(file_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 42, in _analyze_single_pdf
+    analysis_result = self._run_analysis(text)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 58, in _run_analysis
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^
+AttributeError: 'UserDocs' object has no attribute 'client'
+2026-09-18 11:55:55,847 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 11:55:56,866 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 11:55:58,194 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 11:56:00,388 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"

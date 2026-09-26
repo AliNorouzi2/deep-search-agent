@@ -1,0 +1,21 @@
+2026-09-18 14:52:52,702 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:55,911 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:56,243 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:56,465 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:56,708 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:56,974 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:57,303 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:57,546 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:57,789 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:57,997 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:58,314 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 14:52:58,316 - AI_Recruiter - ERROR - arXiv fetch error: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\app.py", line 194, in main
+    papers = keyword_agent.filter_relevant_papers(user_text, candidate_papers, max_results=3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\key_word.py", line 91, in filter_relevant_papers
+    print(relevant_papers['title'])
+          ~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2026-09-18 14:53:02,007 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"

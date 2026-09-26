@@ -1,0 +1,57 @@
+2026-09-18 13:09:15,895 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:10:30,552 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:10:49,657 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:11:06,879 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:11:30,951 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:11:38,864 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:11:44,157 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:11:49,704 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:11:54,073 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:12:05,726 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:25:49,328 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:26:30,858 - AI_Recruiter - ERROR - Analysis error: st.session_state has no attribute "file_paths". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\state\session_state.py", line 797, in __getitem__
+    base_value = self._getitem(widget_id, key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\state\session_state.py", line 850, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 130, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 101, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\state\safe_session_state.py", line 118, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\state\session_state.py", line 804, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "file_paths". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\app.py", line 214, in main
+    raise analysis_error["value"]
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\app.py", line 187, in run_analysis
+    user_analyses = user_docs_agent.analyze_pdfs(st.session_state.file_paths)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 132, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "file_paths". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2026-09-18 13:38:40,042 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:39:24,516 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:39:38,960 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:39:46,451 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:40:04,072 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:40:14,819 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:40:20,665 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:40:25,209 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:40:31,799 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 13:40:43,527 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
