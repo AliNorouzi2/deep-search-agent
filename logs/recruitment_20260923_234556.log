@@ -1,0 +1,9 @@
+2026-09-23 23:46:02,502 - agents.translator - INFO - [Translator] Input length: 739 chars, split into 1 chunks
+2026-09-23 23:46:02,502 - agents.translator - INFO - [Translator] Translating chunk 1/1 (739 chars)
+2026-09-23 23:46:51,052 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-23 23:46:51,062 - agents.translator - INFO - [Translator] Empty result for chunk (attempt 1), retrying with more tokens (2400)...
+2026-09-23 23:48:13,537 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-23 23:48:13,539 - agents.translator - INFO - [Translator] Empty result for chunk (attempt 2), retrying with more tokens (4800)...
+2026-09-23 23:50:14,517 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-23 23:50:14,518 - agents.translator - WARNING - [Translator] Chunk translation still empty after 3 attempts: 'The Real-World Applications of General Intelligence (RAG) concept is crucial for'
+2026-09-23 23:50:14,518 - agents.translator - INFO - [Translator] Final translation length: 0 chars

@@ -1,0 +1,1 @@
+2026-09-22 22:45:57,185 - agents.translator - ERROR - [Translator] Translation failed: Server Error: You made too many requests to the server.According to google, you are allowed to make 5 requests per secondand up to 200k requests per day. You can wait and try again later oryou can try the translate_batch function

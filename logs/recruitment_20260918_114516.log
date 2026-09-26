@@ -1,0 +1,20 @@
+2026-09-18 11:46:30,407 - AI_Recruiter - ERROR - Analysis error: name 'logger' is not defined
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 24, in analyze_pdfs
+    analysis = self._analyze_single_pdf(file_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 38, in _analyze_single_pdf
+    text = self._extract_text_from_pdf(file_path)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDocs' object has no attribute '_extract_text_from_pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\app.py", line 160, in main
+    individual_analyses = user_docs_agent.analyze_pdfs(st.session_state.file_paths)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 27, in analyze_pdfs
+    logger.error(f"Error analyzing {file_path}: {str(e)}", exc_info=True)
+    ^^^^^^
+NameError: name 'logger' is not defined

@@ -1,0 +1,22 @@
+2026-09-23 22:23:44,249 - agents.translator - INFO - [Translator] Loading model on device: cpu
+2026-09-23 22:23:45,397 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/NLPclass/mt5_en_fa_translation/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-09-23 22:23:45,539 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/NLPclass/mt5_en_fa_translation/f64029c9abc4e5fd96a945f0932df2689cc78b3a/config.json?%2FNLPclass%2Fmt5_en_fa_translation%2Fresolve%2Fmain%2Fconfig.json=&etag=%22163e6ac4221466493c38bb603d37cb84a806a54a%22 "HTTP/1.1 200 OK"
+2026-09-23 22:23:45,822 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/NLPclass/mt5_en_fa_translation/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-09-23 22:23:45,967 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/NLPclass/mt5_en_fa_translation/f64029c9abc4e5fd96a945f0932df2689cc78b3a/tokenizer_config.json?%2FNLPclass%2Fmt5_en_fa_translation%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%2294f1b1c3718b68ddb249decdb6bf3921a9f22c94%22 "HTTP/1.1 200 OK"
+2026-09-23 22:23:46,260 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/NLPclass/mt5_en_fa_translation/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-09-23 22:23:46,548 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/NLPclass/mt5_en_fa_translation/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-09-23 22:23:47,239 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/NLPclass/mt5_en_fa_translation "HTTP/1.1 200 OK"
+2026-09-23 22:23:47,494 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/NLPclass/mt5_en_fa_translation/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-09-23 22:23:47,635 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/NLPclass/mt5_en_fa_translation/f64029c9abc4e5fd96a945f0932df2689cc78b3a/config.json?%2FNLPclass%2Fmt5_en_fa_translation%2Fresolve%2Fmain%2Fconfig.json=&etag=%22163e6ac4221466493c38bb603d37cb84a806a54a%22 "HTTP/1.1 200 OK"
+2026-09-23 22:23:51,870 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/NLPclass/mt5_en_fa_translation/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-09-23 22:23:52,005 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/NLPclass/mt5_en_fa_translation/f64029c9abc4e5fd96a945f0932df2689cc78b3a/generation_config.json?%2FNLPclass%2Fmt5_en_fa_translation%2Fresolve%2Fmain%2Fgeneration_config.json=&etag=%22dfe98740031847311df82bcbb6e1124d315474ad%22 "HTTP/1.1 200 OK"
+2026-09-23 22:23:52,038 - agents.translator - INFO - [Translator] Model loaded successfully
+2026-09-23 22:23:52,038 - agents.translator - INFO - [Translator] Translating 739 characters
+2026-09-23 22:23:52,038 - agents.translator - INFO - [Translator] Translating chunk 1/1
+2026-09-23 22:24:17,270 - agents.translator - INFO - [Translator] Translation completed (182 characters)
+2026-09-23 22:24:25,778 - agents.translator - INFO - [Translator] Loading model on device: cpu
+2026-09-23 22:24:25,778 - agents.translator - INFO - [Translator] Translating 2796 characters
+2026-09-23 22:24:25,778 - agents.translator - INFO - [Translator] Translating chunk 1/3
+2026-09-23 22:24:28,845 - agents.translator - INFO - [Translator] Translating chunk 2/3
+2026-09-23 22:25:02,469 - agents.translator - INFO - [Translator] Translating chunk 3/3
+2026-09-23 22:25:14,159 - agents.translator - INFO - [Translator] Translation completed (1911 characters)

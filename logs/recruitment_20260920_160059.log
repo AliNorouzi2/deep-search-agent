@@ -1,0 +1,76 @@
+2026-09-20 16:01:18,511 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:20,950 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,031 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,112 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,184 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,255 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,332 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,402 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,492 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,565 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,633 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,705 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,774 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,847 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:43,925 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:44,000 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:44,070 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:44,146 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:44,216 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:44,284 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:44,356 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:44,427 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:48,369 - pypdf._reader - WARNING - invalid pdf header: b'\n\n\n\n<'
+2026-09-20 16:01:48,369 - pypdf._reader - WARNING - EOF marker not found
+2026-09-20 16:01:48,369 - agents.User_docs - ERROR - Error analyzing uploads\paper_20260920_160146420417_Smartphone-based mobile health impact on oral anti.pdf: Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 36, in analyze_pdfs
+    analysis = self._analyze_single_pdf(file_path, max_tokens, max_input_chars)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 50, in _analyze_single_pdf
+    text = self._extract_text_from_pdf(file_path)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 59, in _extract_text_from_pdf
+    reader = PdfReader(file_path)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypdf\_reader.py", line 151, in __init__
+    self._initialize_stream(stream)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypdf\_reader.py", line 175, in _initialize_stream
+    self.read(stream)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypdf\_reader.py", line 689, in read
+    self._find_eof_marker(stream)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypdf\_reader.py", line 802, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypdf\_utils.py", line 378, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-09-20 16:01:48,726 - pypdf._reader - WARNING - invalid pdf header: b'\n\n\n\n<'
+2026-09-20 16:01:48,726 - pypdf._reader - WARNING - EOF marker not found
+2026-09-20 16:01:48,727 - agents.User_docs - ERROR - Error analyzing uploads\paper_20260920_160148333269_Clin-STAR Corner Practice Changing Advances at th.pdf: Stream has ended unexpectedly
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 36, in analyze_pdfs
+    analysis = self._analyze_single_pdf(file_path, max_tokens, max_input_chars)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 50, in _analyze_single_pdf
+    text = self._extract_text_from_pdf(file_path)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 59, in _extract_text_from_pdf
+    reader = PdfReader(file_path)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypdf\_reader.py", line 151, in __init__
+    self._initialize_stream(stream)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypdf\_reader.py", line 175, in _initialize_stream
+    self.read(stream)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypdf\_reader.py", line 689, in read
+    self._find_eof_marker(stream)
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypdf\_reader.py", line 802, in _find_eof_marker
+    line = read_previous_line(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python312\Lib\site-packages\pypdf\_utils.py", line 378, in read_previous_line
+    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
+pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+2026-09-20 16:01:53,276 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:01:55,207 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:02:13,225 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-20 16:02:15,821 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"

@@ -1,0 +1,31 @@
+2026-09-18 11:48:33,245 - agents.User_docs - ERROR - Error analyzing uploads\resume_20260918_114832_Artificial Intelligence_ The Basics ( PDFDrive ).pdf: 'UserDocs' object has no attribute '_extract_text_from_pdf'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 26, in analyze_pdfs
+    analysis = self._analyze_single_pdf(file_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 40, in _analyze_single_pdf
+    text = self._extract_text_from_pdf(file_path)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDocs' object has no attribute '_extract_text_from_pdf'
+2026-09-18 11:48:33,515 - agents.User_docs - ERROR - Error analyzing uploads\resume_20260918_114832_dokumen.pub_learn-ai-assisted-python-programming-meap-v01.pdf: 'UserDocs' object has no attribute '_extract_text_from_pdf'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 26, in analyze_pdfs
+    analysis = self._analyze_single_pdf(file_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 40, in _analyze_single_pdf
+    text = self._extract_text_from_pdf(file_path)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDocs' object has no attribute '_extract_text_from_pdf'
+2026-09-18 11:48:33,931 - agents.User_docs - ERROR - Error analyzing uploads\resume_20260918_114832_MCA-AI.pdf: 'UserDocs' object has no attribute '_extract_text_from_pdf'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 26, in analyze_pdfs
+    analysis = self._analyze_single_pdf(file_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\Coding\ollama\ai-agent-deep-search\agents\User_docs.py", line 40, in _analyze_single_pdf
+    text = self._extract_text_from_pdf(file_path)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDocs' object has no attribute '_extract_text_from_pdf'
+2026-09-18 11:48:49,774 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 11:48:50,760 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 11:48:53,607 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2026-09-18 11:49:00,626 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
