@@ -16,23 +16,7 @@
 
 </div>
 
----
 
-## 📖 Table of Contents
-
-- [Why This Exists](#-why-this-exists)
-- [What It Does](#-what-it-does)
-- [Architecture](#-architecture)
-- [How a Request Flows Through the System](#-how-a-request-flows-through-the-system)
-- [Tech Stack](#-tech-stack)
-- [Project Stats](#-project-stats)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Configuration](#-configuration)
-- [Feature Highlights](#-feature-highlights)
-- [Roadmap](#-roadmap)
-
----
 
 ## 💡 Why This Exists
 
