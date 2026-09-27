@@ -1,80 +1,186 @@
-# 🤖 AI Agent Deep Search
-
 <div align="center">
 
-**A multi-agent research assistant that finds, analyzes, and synthesizes academic papers into a polished research article — with follow-up Q&A, Persian translation, and audio playback.**
+# 🤖 AI Agent Deep Search
+
+### A multi-agent research assistant that turns one question into a fully-written, source-backed research article — powered entirely by local LLMs.
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.63-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-000000?style=for-the-badge&logo=ollama&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Offline Translation](https://img.shields.io/badge/Translation-Offline%20(Argos)-4CAF50?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+
+![Lines of Code](https://img.shields.io/badge/Lines%20of%20Code-2%2C400%2B-informational?style=flat-square)
+![Agents](https://img.shields.io/badge/AI%20Agents-11-informational?style=flat-square)
+![Data Sources](https://img.shields.io/badge/Data%20Sources-arXiv%20%7C%20Semantic%20Scholar%20%7C%20PubMed-informational?style=flat-square)
 
 </div>
 
 ---
 
+## 📖 Table of Contents
+
+- [Why This Exists](#-why-this-exists)
+- [What It Does](#-what-it-does)
+- [Architecture](#-architecture)
+- [How a Request Flows Through the System](#-how-a-request-flows-through-the-system)
+- [Tech Stack](#-tech-stack)
+- [Project Stats](#-project-stats)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Configuration](#-configuration)
+- [Feature Highlights](#-feature-highlights)
+- [Roadmap](#-roadmap)
+
+---
+
+## 💡 Why This Exists
+
+Reading, filtering, and synthesizing academic papers is slow. **AI Agent Deep Search** automates the whole pipeline — from *"what should I read?"* to *"here's a fully-written article, with sources, that answers your question."*
+
+It's built as a small **society of specialized agents** rather than one giant prompt: each agent does exactly one job well, hands its output to the next, and the whole thing is orchestrated by a Streamlit chat interface that feels like talking to a research partner — not filling out a form.
+
+---
+
 ## ✨ What It Does
 
-Type a research question, and a pipeline of specialized AI agents:
+Given a single question (in **any language**), the system will:
 
-1. 🧭 **Plans** which academic source (arXiv, Semantic Scholar, PubMed) best fits your topic
-2. 🔑 **Extracts** English search keywords — even if you asked in Persian
-3. 🌐 **Searches & downloads** the most relevant open-access papers
-4. 📄 **Analyzes** every PDF (yours and the fetched ones) in detail
-5. ✍️ **Writes** a full article — Introduction, Body, Conclusion, References
-6. 💬 **Keeps the conversation going** — ask follow-ups, request edits, or dig deeper
-7. 🔊🌍 **Reads it aloud** or **translates it to Persian** on demand
+1. 🧭 **Route** the topic to the best academic source (arXiv for CS/AI/Math, PubMed for medicine, Semantic Scholar for everything else)
+2. 🔑 **Translate & extract** clean English search keywords
+3. 🌐 **Search, filter, and download** real, verified PDFs (not broken HTML redirects)
+4. 📄 **Analyze** every document — yours and the ones it found — chapter by chapter
+5. ✍️ **Write** a complete article: Introduction → Body → Conclusion → References
+6. 💬 **Keep talking** — ask it to go deeper, simplify, or challenge a follow-up like a real conversation
+7. 🔊 **Read it aloud**, or 🌍 **translate it to Persian**, fully offline, on demand
 
-All results are saved to a **persistent chat history** (browser local storage) so nothing is lost on refresh.
-
----
-
-## 🖥️ Preview
-
-> A chat-style interface: type your question, watch the agents work, and read a fully-formatted research article — right in your browser.
-
----
-
-## 🧩 Tech Stack
-
-| Category | Technology |
-|---|---|
-| **UI / Frontend** | [Streamlit](https://streamlit.io/) (custom CSS + injected JS for a fixed chat bar & floating panels) |
-| **LLM Runtime** | [Ollama](https://ollama.com/) (local models — `llama3.2`, `qwen2.5`, etc.) via the `openai` Python SDK |
-| **Academic Search** | arXiv API · Semantic Scholar Graph API · PubMed (NCBI E-utilities) |
-| **PDF Parsing** | `pypdf` |
-| **Translation (EN → FA)** | [Argos Translate](https://www.argosopentech.com/) — fully offline |
-| **Text-to-Speech** | `gTTS` (Google Text-to-Speech) |
-| **Markdown Rendering (FA)** | `markdown` + custom RTL styling |
-| **Persistence** | `streamlit-local-storage` (browser-side chat history) |
-| **Env Config** | `python-dotenv` |
-| **HTTP** | `requests` |
+All of this is saved to a **persistent history** that survives page refreshes.
 
 ---
 
 ## 🏗️ Architecture
 
-The app is split into focused, single-purpose agents — each one a small class with a clear job:
+```mermaid
+graph TD
+    U[👤 User Question] --> IC[🧠 Intent Classifier]
+    IC -->|New Topic| PL[🧭 Planner]
+    IC -->|Follow-up| AA[💬 AI Ask Agent]
+
+    PL --> KW[🔑 Keyword Extractor]
+    KW --> DC[🌐 Document Collector]
+    DC -->|arXiv| SRC1[(arXiv API)]
+    DC -->|Semantic Scholar| SRC2[(Semantic Scholar)]
+    DC -->|PubMed| SRC3[(PubMed / NCBI)]
+
+    DC --> FILTER[🎯 Relevance Filter]
+    FILTER --> DL[⬇️ PDF Downloader]
+
+    UP[📎 User-Uploaded PDFs] --> UD[📄 Document Analyzer]
+    DL --> UD
+
+    UD --> FA[📝 File Analyser<br/>per-document summaries]
+    FA --> OD[✍️ Output Designer<br/>Intro / Body / Conclusion]
+    OD --> ART[📰 Final Article]
+
+    AA --> ART
+
+    ART --> TTS[🔊 Text-to-Speech]
+    ART --> TR[🌍 Persian Translator]
+    ART --> HIST[💾 History Store<br/>browser local storage]
+
+    style U fill:#FF4B4B,color:#fff
+    style ART fill:#4CAF50,color:#fff
+    style HIST fill:#2196F3,color:#fff
+```
+
+---
+
+## 🔄 How a Request Flows Through the System
+
+The system doesn't blindly restart research on every message — it first decides whether you're **continuing** a conversation or **starting** a new one:
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant App as Streamlit App
+    participant IC as Intent Classifier
+    participant Pipeline as Research Pipeline
+    participant AI_Ask as AI Ask Agent
+
+    User->>App: "AI in healthcare"
+    App->>IC: classify(new message, no history)
+    IC-->>App: new_analysis
+    App->>Pipeline: Plan → Search → Analyze → Write
+    Pipeline-->>App: Full article + sources
+    App-->>User: Article + suggested follow-up
+
+    User->>App: "explain more"
+    App->>IC: classify(new message, previous topic)
+    IC-->>App: follow_up
+    App->>AI_Ask: respond using EXISTING context
+    AI_Ask-->>App: Answer or revised article
+    App-->>User: Answer (no new search, no re-download)
+```
+
+This routing is why a two-word reply like *"explain more"* doesn't trigger a brand-new, expensive research cycle.
+
+---
+
+## 🧩 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **UI / Frontend** | [Streamlit](https://streamlit.io/) — custom CSS + injected JS for a fixed chat bar, floating panels, and auto-scroll |
+| **LLM Runtime** | [Ollama](https://ollama.com/), fully local (`llama3.2`, `qwen2.5`, etc.) via the OpenAI-compatible SDK |
+| **Academic Search** | arXiv API · Semantic Scholar Graph API · PubMed (NCBI E-utilities) |
+| **PDF Parsing** | `pypdf` |
+| **Translation (EN → FA)** | [Argos Translate](https://www.argosopentech.com/) — 100% offline, no API calls |
+| **Text-to-Speech** | `gTTS` |
+| **Markdown / RTL Rendering** | `markdown` + custom right-to-left CSS |
+| **Persistence** | `streamlit-local-storage` — chat history lives in the browser |
+| **Config** | `python-dotenv` |
+
+---
+
+## 📊 Project Stats
+
+| Metric | Value |
+|---|---|
+| 🗓️ Development time | 9 days |
+| 🧵 Lines of code | **2,400+** (Python + CSS) |
+| 🤖 Specialized agents | **11** |
+| 🔁 Local test/debug runs | **1,700+** |
+| 🌐 Academic sources integrated | 3 (arXiv, Semantic Scholar, PubMed) |
+| 🗣️ Languages supported (input) | Any — auto-translated to English for search |
+
+---
+
+## 📁 Project Structure
 
 ```
-app.py                     → Streamlit UI orchestration & the analysis pipeline
+ai-agent-deep-search/
+├── app.py                        # Streamlit UI orchestration & pipeline wiring
+├── config.py                     # Effort-level settings (Low / Medium / High)
+├── session_state_init.py         # Centralized Streamlit session-state defaults
+│
 ├── agents/
-│   ├── Planner.py          → picks the best paper source (arXiv / Semantic Scholar / PubMed)
-│   ├── key_word.py          → extracts English keywords + filters papers for relevance
-│   ├── Document_collector.py→ searches & downloads real PDFs (with redirect/HTML detection)
-│   ├── User_docs.py         → extracts text from PDFs & runs per-document analysis
-│   ├── File_analyser.py     → summarizes documents (Docs class)
-│   ├── Output_design.py     → writes the final Introduction/Body/Conclusion article
-│   ├── text_input.py        → classifies a new message as follow-up vs. new analysis
-│   ├── AI_ask.py             → answers follow-ups / edits the article using existing context
-│   ├── translator.py        → offline English → Persian translation (Argos)
-│   ├── history_store.py     → reads/writes chat history to browser local storage
-│   └── upload_manager.py    → handles user PDF uploads (dedupe, limits, cleanup)
+│   ├── Planner.py                 # Chooses the best paper source for the topic
+│   ├── key_word.py                 # Extracts English keywords + filters for relevance
+│   ├── Document_collector.py       # Searches & downloads verified PDFs
+│   ├── User_docs.py                # Extracts text from PDFs, runs per-doc analysis
+│   ├── File_analyser.py            # Summarizes documents
+│   ├── Output_design.py            # Writes the final article (Intro/Body/Conclusion)
+│   ├── text_input.py               # Classifies: new topic vs. follow-up
+│   ├── AI_ask.py                    # Answers follow-ups using existing context
+│   ├── translator.py               # Offline EN → FA translation (Argos)
+│   ├── history_store.py            # Reads/writes chat history to local storage
+│   └── upload_manager.py           # Handles user PDF uploads (dedupe, limits, cleanup)
+│
 ├── ui/
-│   └── components.py        → reusable render functions (chat bubbles, scroll button, RTL text)
-├── session_state_init.py    → centralizes all Streamlit session-state defaults
-├── config.py                → effort-level settings (Low / Medium / High)
-└── static/style.css         → all custom styling (fixed chat bar, panels, buttons)
+│   └── components.py               # Chat bubbles, scroll button, RTL renderer
+│
+└── static/
+    └── style.css                   # Fixed chat bar, floating panels, custom buttons
 ```
 
 ---
@@ -83,7 +189,7 @@ app.py                     → Streamlit UI orchestration & the analysis pipelin
 
 ### 1. Prerequisites
 - Python 3.12+
-- [Ollama](https://ollama.com/) installed and running locally, with at least one model pulled:
+- [Ollama](https://ollama.com/) running locally with at least one model pulled:
   ```bash
   ollama pull llama3.2
   ```
@@ -93,35 +199,50 @@ app.py                     → Streamlit UI orchestration & the analysis pipelin
 pip install streamlit streamlit-option-menu streamlit-local-storage openai requests python-dotenv pypdf gTTS markdown argostranslate
 ```
 
-### 3. Configure environment variables
-Create a `.env` file in the project root:
-```env
-SEMANTIC_SCHOLAR_API_KEY=your_key_here
-```
-*(Get a free key at [semanticscholar.org/product/api](https://www.semanticscholar.org/product/api) — the app falls back to arXiv automatically if this is missing or the request fails.)*
-
-### 4. Run the app
+### 3. Run it
 ```bash
 streamlit run app.py
 ```
 
 ---
 
-## 🎛️ Features at a Glance
+## ⚙️ Configuration
 
-- ⚡ **Effort levels** (Low / Medium / High) — control how deep and long each analysis goes
-- 🌐 **Toggle web search** — use only your uploaded PDFs if you prefer
-- 📎 **Upload up to 5 PDFs** — auto-deduplicated by filename
-- 🧠 **Smart follow-ups** — the app tells apart "explain more" from "start a new topic"
-- 🗂️ **Persistent history sidebar** — revisit or delete past conversations
-- 🔊 **Listen** to any result, 🌍 **translate** it to Persian with proper RTL rendering
+Create a `.env` file in the project root:
+
+```env
+SEMANTIC_SCHOLAR_API_KEY=your_key_here
+```
+
+Get a free key at [semanticscholar.org/product/api](https://www.semanticscholar.org/product/api). If it's missing, expired, or rate-limited, the app **automatically falls back to arXiv** — no crash, no manual intervention.
 
 ---
 
-## 📌 Notes
+## 🎛️ Feature Highlights
 
-- All LLM calls run against a **local Ollama server** — no data leaves your machine for the analysis/writing steps.
-- Translation runs fully **offline** via Argos Translate.
-- Only the academic-search step (arXiv / Semantic Scholar / PubMed) requires internet access.
+- ⚡ **Effort levels** — Low / Medium / High control how deep and long each analysis goes
+- 🌐 **Web search toggle** — restrict the agent to only your uploaded PDFs if you prefer
+- 📎 **Multi-file upload** — up to 5 PDFs, auto-deduplicated by filename
+- 🧠 **Context-aware follow-ups** — the intent classifier tells "explain more" apart from "new topic," so it never re-downloads papers unnecessarily
+- 🗂️ **Persistent history sidebar** — revisit or delete past conversations, stored client-side
+- 🔊 **Listen** to any result · 🌍 **Translate** it to Persian with proper RTL typography
+- 🛡️ **Resilient by design** — PDF-link validation, redirect handling, and automatic source fallback keep the pipeline from breaking on bad data
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Chart/visualization generation for quantitative findings
+- [ ] Multi-user support with server-side persistence
+- [ ] Support for more academic databases (CORE, CrossRef)
+- [ ] Export to PDF / Word
+
+---
+
+<div align="center">
+
+Built solo, end-to-end — from the first `st.text_input` to a full multi-agent research pipeline.
+
+⭐ If this project is useful to you, consider giving it a star!
 
 </div>
