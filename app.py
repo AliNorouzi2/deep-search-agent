@@ -474,14 +474,15 @@ def render_conversation():
                 st.markdown("---")
                 render_persian(st.session_state[f"translated_{turn['id']}"])
             st.divider()
-            continue
 
         with tab2:
-            for item in result["individual_summaries"]:
-                if item.get("source") != "user_upload":
-                    continue
-                st.markdown(f"**{item.get('file_path')}**")
-                st.write(item.get("summary"))
+            user_items = [it for it in result["individual_summaries"] if it.get("source") == "user_upload"]
+            if not user_items:
+                st.info("No file has been uploaded.")
+            else:
+                for item in user_items:
+                    st.markdown(f"**{item.get('file_path')}**")
+                    st.write(item.get("summary"))
 
         with tab3:
             for paper in papers:
