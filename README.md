@@ -225,6 +225,9 @@ Get a free key at [semanticscholar.org/product/api](https://www.semanticscholar.
 
 <div align="center">
 
+<img width="1888" height="860" alt="image" src="https://github.com/user-attachments/assets/3e15c709-9146-4b94-8378-414ca8c5c4d7" />
+
+
 Built solo, end-to-end — from the first `st.text_input` to a full multi-agent research pipeline.
 
 ⭐ If this project is useful to you, consider giving it a star!
