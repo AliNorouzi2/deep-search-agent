@@ -11,7 +11,7 @@
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
 ![Lines of Code](https://img.shields.io/badge/Lines%20of%20Code-2%2C400%2B-informational?style=flat-square)
-![Agents](https://img.shields.io/badge/AI%20Agents-12-informational?style=flat-square)
+![Agents](https://img.shields.io/badge/AI%20Agents-11-informational?style=flat-square)
 ![Data Sources](https://img.shields.io/badge/Data%20Sources-arXiv%20%7C%20Semantic%20Scholar%20%7C%20PubMed-informational?style=flat-square)
 
 </div>
