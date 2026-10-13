@@ -62,12 +62,31 @@ st.markdown(
 
 load_css("static/style.css", Path(__file__).resolve().parent)
 
+def start_new_chat():
+    """Reset everything tied to the current conversation and open a blank chat."""
+    st.session_state.conversation = []
+    st.session_state.current_conversation_id = None
+    st.session_state.scroll_to_turn_id = None
+    st.session_state.show_uploader = False
+    st.session_state.file_paths = []
+    upload_manager.cleanup(st.session_state.uploaded_registry)
+    st.session_state.chat_input = ""   # clears the text box
+
 
 def main():
     init_session_state(history_store)
 
     if st.session_state.show_history:
         with st.sidebar:
+            st.button(
+                "New chat",
+                icon=":material/edit_square:",
+                key="new_chat_btn",
+                use_container_width=True,
+                on_click=start_new_chat,
+                disabled=st.session_state.is_analyzing,
+            )
+                        
             st.subheader("History")
 
             if not st.session_state.history:
@@ -104,6 +123,7 @@ def main():
                 placeholder="Type your message...", 
                 label_visibility="collapsed", 
                 disabled=st.session_state.is_analyzing,
+                key="chat_input",
             )
         with col2:
             if st.button("", icon=":material/attach_file:", help="Attach PDF files", key="upload_button", disabled=st.session_state.is_analyzing,):
