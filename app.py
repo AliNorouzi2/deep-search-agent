@@ -349,6 +349,7 @@ def main():
                 "id": str(uuid.uuid4()),
                 "user_text": analysis_text,
                 "mode": mode,
+                "elapsed_seconds": elapsed,
             }
 
             if mode == "follow_up":
@@ -417,6 +418,11 @@ def render_conversation():
         st.markdown(f'<div id="turn-{turn["id"]}"></div>', unsafe_allow_html=True)
         render_user_message(turn['user_text'])
 
+        elapsed_seconds = turn.get("elapsed_seconds")
+        if elapsed_seconds is not None:
+            label = "Answered" if turn["mode"] == "follow_up" else "Analysis completed"
+            st.caption(f":material/timer: {label} in {elapsed_seconds}s")
+            
         if turn["mode"] == "follow_up" and "answer" in turn:
             st.markdown(turn["answer"])
             col_audio, col_translate = st.columns([1, 1])
